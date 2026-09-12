@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  activity-generator:
+    build: .
+    container_name: github-activity-generator
+    restart: unless-stopped
+    volumes:
+      - ./activity_log.txt:/app/activity_log.txt
+      - ./config.json:/app/config.json

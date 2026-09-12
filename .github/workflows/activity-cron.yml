@@ -1,44 +1,50 @@
-name: Daily Activity Generator (24 Commits / Day)
+name: 🚀 Daily Activity Generator (24 Commits / Day)
 
 on:
   schedule:
-    # Runs at the start of every hour (24 times daily)
+    # Triggers every hour at minute 0 (24 times every day)
     - cron: "0 * * * *"
-  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+  workflow_dispatch: # Allows manual on-demand execution from GitHub UI
+
+# Prevent overlapping runs from causing git conflicts
+concurrency:
+  group: activity-cron-group
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
   generate-activity:
+    name: ⚡ Generate Hourly Activity
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python
+      - name: 🐍 Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Run Activity Generator
+      - name: ⚙️ Run Activity Automation
         run: |
           python activity_generator.py --count 1
 
-      - name: Commit and Push Activity
+      - name: 🚀 Commit & Push Changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add activity_log.txt
           
-          # Only commit if there are changes
           if git diff --staged --quiet; then
-            echo "No changes detected."
+            echo "ℹ️ No staged changes to commit."
           else
             TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
             git commit -m "chore(activity): record activity log at ${TIMESTAMP}"
             git push origin HEAD
+            echo "✅ Successfully committed and pushed hourly activity."
           fi
