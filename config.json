@@ -1,0 +1,31 @@
+{
+  "log_file": "activity_log.txt",
+  "commit_prefix": "chore(activity):",
+  "hourly_interval_seconds": 3600,
+  "quotes": [
+    "Code is like humor. When you have to explain it, it's bad. - Cory House",
+    "Fix the cause, not the symptom. - Steve Maguire",
+    "Optimism is an occupational hazard of programming: feedback is the treatment. - Kent Beck",
+    "Simplicity is prerequisite for reliability. - Edsger W. Dijkstra",
+    "Make it work, make it right, make it fast. - Kent Beck",
+    "Clean code always looks like it was written by someone who cares. - Robert C. Martin",
+    "Refactor early, refactor often. - Anonymous",
+    "The best error message is the one that never shows up. - Thomas Fuchs",
+    "Any fool can write code that a computer can understand. Good programmers write code that humans can understand. - Martin Fowler",
+    "First, solve the problem. Then, write the code. - John Johnson",
+    "Experience is the name everyone gives to their mistakes. - Oscar Wilde",
+    "Java is to JavaScript what car is to Carpet. - Chris Heilmann",
+    "Knowledge is power. - Francis Bacon",
+    "Stay hungry, stay foolish. - Steve Jobs",
+    "Talk is cheap. Show me the code. - Linus Torvalds",
+    "Programming isn't about what you know; it's about what you can figure out. - Chris Pine",
+    "The only way to learn a new programming language is by writing programs in it. - Dennis Ritchie",
+    "Before software can be reusable it first has to be usable. - Ralph Johnson",
+    "Deleted code is debugged code. - Jeff Sickel",
+    "Simplicity is the soul of efficiency. - Austin Freeman",
+    "Quality is not an act, it is a habit. - Aristotle",
+    "The most important property of a program is whether it accomplishes the intention of its user. - C.A.R. Hoare",
+    "Continuous improvement is better than delayed perfection. - Mark Twain",
+    "Small daily improvements over time lead to stunning results. - Robin Sharma"
+  ]
+}

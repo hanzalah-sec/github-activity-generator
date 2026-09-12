@@ -1,0 +1,44 @@
+name: Daily Activity Generator (24 Commits / Day)
+
+on:
+  schedule:
+    # Runs at the start of every hour (24 times daily)
+    - cron: "0 * * * *"
+  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+
+permissions:
+  contents: write
+
+jobs:
+  generate-activity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Activity Generator
+        run: |
+          python activity_generator.py --count 1
+
+      - name: Commit and Push Activity
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add activity_log.txt
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes detected."
+          else
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+            git commit -m "chore(activity): record activity log at ${TIMESTAMP}"
+            git push origin HEAD
+          fi
