@@ -151,3 +151,4 @@
 [2026-09-18 15:02:24 UTC] Activity Record | Make it work, make it right, make it fast. - Kent Beck
 [2026-09-18 16:02:01 UTC] Activity Record | Simplicity is prerequisite for reliability. - Edsger W. Dijkstra
 [2026-09-18 17:02:30 UTC] Activity Record | Stay hungry, stay foolish. - Steve Jobs
+[2026-09-18 18:02:26 UTC] Activity Record | Before software can be reusable it first has to be usable. - Ralph Johnson
