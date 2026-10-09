@@ -622,3 +622,4 @@
 [2026-10-09 13:08:17 UTC] Activity Record | Before software can be reusable it first has to be usable. - Ralph Johnson
 [2026-10-09 14:06:20 UTC] Activity Record | The best error message is the one that never shows up. - Thomas Fuchs
 [2026-10-09 15:05:43 UTC] Activity Record | Any fool can write code that a computer can understand. Good programmers write code that humans can understand. - Martin Fowler
+[2026-10-09 16:05:44 UTC] Activity Record | Fix the cause, not the symptom. - Steve Maguire
